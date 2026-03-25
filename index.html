@@ -3,21 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gold Coast Market - River North's Premier Liquor & Convenience Store</title>
-    <meta name="description" content="Gold Coast Market in River North Chicago. Premium beer, wine, spirits & convenience items. Open 9AM-12AM daily. We deliver! 4.6★ rated.">
+    <title>Gold Coast Market | River North's Premier Liquor & Convenience Store</title>
+    <meta name="description" content="Gold Coast Market - River North's premier liquor store at 71 W Chicago Ave. Open 9AM-12AM daily. Order delivery via DoorDash. 4.6 stars, 1000+ products.">
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-black: #0a0a0a;
-            --amber: #c87533;
-            --cream: #f5f0e8;
-            --amber-light: #d4943e;
-            --amber-dark: #b56b2a;
-            --gray-dark: #1a1a1a;
-            --gray-medium: #2a2a2a;
+            --emerald-primary: #1a3a2a;
+            --ivory-light: #faf5eb;
+            --gold-accent: #b8963e;
+            --soft-white: #f8f8f6;
+            --emerald-dark: #0d1f16;
+            --emerald-medium: #2d5a42;
+            --gold-light: #d4b954;
+            --text-dark: #2c2c2c;
+            --text-light: rgba(248, 248, 246, 0.9);
+            --text-muted: rgba(248, 248, 246, 0.7);
         }
 
         * {
@@ -26,49 +31,113 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'DM Sans', sans-serif;
-            background-color: var(--bg-black);
-            color: var(--cream);
             line-height: 1.6;
-            overflow-x: hidden;
+            color: var(--text-dark);
+            background-color: var(--soft-white);
         }
 
-        .playfair {
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
             font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.2;
         }
 
-        /* Header */
-        header {
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+        }
+
+        h3 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+        }
+
+        p {
+            font-size: clamp(1rem, 2vw, 1.125rem);
+            margin-bottom: 1rem;
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--gold-accent);
+            color: var(--emerald-primary);
+            box-shadow: 0 4px 15px rgba(184, 150, 62, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(184, 150, 62, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--soft-white);
+            border: 2px solid var(--soft-white);
+        }
+
+        .btn-outline:hover {
+            background: var(--soft-white);
+            color: var(--emerald-primary);
+        }
+
+        /* Header & Navigation */
+        .navbar {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
             z-index: 1000;
             padding: 1rem 0;
             transition: all 0.3s ease;
+            background: rgba(26, 58, 42, 0.1);
+            backdrop-filter: blur(10px);
         }
 
-        header.scrolled {
-            background: rgba(10, 10, 10, 0.98);
-            box-shadow: 0 2px 20px rgba(200, 117, 51, 0.1);
+        .navbar.scrolled {
+            background: rgba(26, 58, 42, 0.95);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
         }
 
-        nav {
+        .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0 2rem;
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
             font-weight: 700;
-            color: var(--amber);
+            color: var(--soft-white);
             text-decoration: none;
         }
 
@@ -79,15 +148,15 @@
         }
 
         .nav-links a {
-            color: var(--cream);
+            color: var(--soft-white);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
             position: relative;
         }
 
         .nav-links a:hover {
-            color: var(--amber);
+            color: var(--gold-accent);
         }
 
         .nav-links a::after {
@@ -97,7 +166,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--amber);
+            background: var(--gold-accent);
             transition: width 0.3s ease;
         }
 
@@ -105,351 +174,473 @@
             width: 100%;
         }
 
-        .phone-btn {
-            background: var(--amber);
-            color: var(--bg-black);
-            padding: 0.75rem 1.5rem;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 600;
-            transition: all 0.3s ease;
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--soft-white);
+            font-size: 1.5rem;
+            cursor: pointer;
         }
 
-        .phone-btn:hover {
-            background: var(--amber-light);
-            transform: translateY(-2px);
-        }
-
-        /* Hero Section */
+        /* Hero Section - Split Screen */
         .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(10, 10, 10, 0.4), rgba(10, 10, 10, 0.7)), 
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" fill="%23c87533" opacity="0.1"><path d="M0,400 Q300,200 600,400 T1200,400 L1200,800 L0,800 Z"/></svg>');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            min-height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: center;
+            background: var(--emerald-primary);
             position: relative;
+            overflow: hidden;
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            height: 100vh;
+            max-width: 100%;
         }
 
         .hero-content {
-            text-align: center;
-            max-width: 800px;
-            padding: 0 2rem;
-            opacity: 0;
-            transform: translateY(50px);
-            animation: fadeInUp 1s ease 0.5s forwards;
+            padding: 0 4rem;
+            color: var(--soft-white);
+            animation: fadeInLeft 1s ease-out;
         }
 
-        .hero h1 {
-            font-size: clamp(3rem, 6vw, 5rem);
-            font-weight: 700;
+        .hero-tagline {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: var(--gold-accent);
             margin-bottom: 1rem;
-            color: var(--cream);
+            font-weight: 500;
         }
 
-        .hero .tagline {
-            font-size: clamp(1.2rem, 3vw, 1.8rem);
-            color: var(--amber);
-            margin-bottom: 2rem;
-            font-weight: 300;
+        .hero-title {
+            margin-bottom: 1.5rem;
+            color: var(--soft-white);
         }
 
-        .hero .subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 3rem;
-            opacity: 0.9;
+        .hero-description {
+            font-size: clamp(1.1rem, 2vw, 1.25rem);
+            margin-bottom: 2.5rem;
+            color: var(--text-muted);
+            max-width: 500px;
         }
 
-        .cta-buttons {
+        .hero-buttons {
             display: flex;
             gap: 1.5rem;
-            justify-content: center;
             flex-wrap: wrap;
         }
 
-        .btn-primary, .btn-secondary {
-            padding: 1rem 2rem;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            display: inline-block;
+        .hero-image {
+            height: 100vh;
+            background-image: url('https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?w=1600&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            animation: fadeInRight 1s ease-out;
         }
 
-        .btn-primary {
-            background: var(--amber);
-            color: var(--bg-black);
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(26, 58, 42, 0.3) 0%, rgba(0, 0, 0, 0.1) 100%);
         }
 
-        .btn-primary:hover {
-            background: var(--amber-light);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(200, 117, 51, 0.3);
+        /* Trust Stats Strip */
+        .trust-stats {
+            background: var(--ivory-light);
+            padding: 3rem 0;
+            border-top: 3px solid var(--gold-accent);
         }
 
-        .btn-secondary {
-            background: transparent;
-            color: var(--cream);
-            border: 2px solid var(--cream);
-        }
-
-        .btn-secondary:hover {
-            background: var(--cream);
-            color: var(--bg-black);
-        }
-
-        /* Delivery Section */
-        .delivery {
-            padding: 6rem 2rem;
-            background: var(--gray-dark);
-            text-align: center;
-        }
-
-        .delivery h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: var(--amber);
-        }
-
-        .delivery-options {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .delivery-card {
-            background: var(--gray-medium);
-            padding: 2rem;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .delivery-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .delivery-icon {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto 1rem;
-            background: var(--amber);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--bg-black);
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        /* Categories Section */
-        .categories {
-            padding: 6rem 2rem;
+        .trust-container {
             max-width: 1200px;
             margin: 0 auto;
-        }
-
-        .categories h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .category-grid {
+            padding: 0 2rem;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
+            text-align: center;
+        }
+
+        .trust-item {
+            animation: fadeUp 0.8s ease-out;
+        }
+
+        .trust-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--emerald-primary);
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 0.5rem;
+        }
+
+        .trust-label {
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        /* Categories Section - Horizontal Scroll */
+        .categories {
+            background: var(--emerald-primary);
+            padding: 5rem 0;
+            color: var(--soft-white);
+        }
+
+        .categories-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            animation: fadeUp 0.8s ease-out;
+        }
+
+        .section-title {
+            color: var(--soft-white);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .categories-scroll {
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+            padding: 1rem 0 2rem 0;
+            scroll-behavior: smooth;
+        }
+
+        .categories-scroll::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .categories-scroll::-webkit-scrollbar-track {
+            background: rgba(248, 248, 246, 0.1);
+            border-radius: 4px;
+        }
+
+        .categories-scroll::-webkit-scrollbar-thumb {
+            background: var(--gold-accent);
+            border-radius: 4px;
         }
 
         .category-card {
-            background: var(--gray-medium);
-            border-radius: 10px;
+            min-width: 300px;
+            background: var(--soft-white);
+            border-radius: 12px;
             overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
             transition: all 0.3s ease;
-            position: relative;
-            height: 300px;
+            animation: fadeUp 0.8s ease-out;
         }
 
         .category-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(200, 117, 51, 0.2);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .category-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .category-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
         }
 
         .category-content {
             padding: 2rem;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            color: var(--text-dark);
+        }
+
+        .category-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--emerald-primary);
+        }
+
+        .category-description {
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .category-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .category-features li {
+            padding: 0.3rem 0;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .category-features li::before {
+            content: '✓';
+            color: var(--gold-accent);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--ivory-light);
+            padding: 6rem 0;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-content {
+            animation: fadeUp 0.8s ease-out;
+        }
+
+        .about-title {
+            color: var(--emerald-primary);
+            margin-bottom: 2rem;
+        }
+
+        .about-description {
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .about-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .about-features li {
+            padding: 0.8rem 0;
+            color: var(--text-dark);
+            font-size: 1.05rem;
+            font-weight: 500;
+        }
+
+        .about-features li::before {
+            content: '★';
+            color: var(--gold-accent);
+            font-weight: bold;
+            margin-right: 1rem;
+        }
+
+        .about-image {
+            height: 500px;
+            background-image: url('https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=800&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            animation: fadeUp 0.8s ease-out;
+            position: relative;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(26, 58, 42, 0.2) 0%, rgba(0, 0, 0, 0.1) 100%);
+            border-radius: 12px;
+        }
+
+        /* Hours Section */
+        .hours {
+            background: var(--emerald-primary);
+            padding: 5rem 0;
+            color: var(--soft-white);
+        }
+
+        .hours-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
             text-align: center;
         }
 
-        .category-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--amber);
+        .hours-title {
+            color: var(--soft-white);
+            margin-bottom: 3rem;
+            animation: fadeUp 0.8s ease-out;
         }
 
-        .category-card p {
-            opacity: 0.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .category-card .learn-more {
-            color: var(--amber);
-            text-decoration: none;
-            font-weight: 600;
-            position: relative;
-            display: inline-block;
-        }
-
-        .category-card .learn-more::after {
-            content: ' →';
-            transition: transform 0.3s ease;
-        }
-
-        .category-card:hover .learn-more::after {
-            transform: translateX(5px);
-        }
-
-        /* Our Story Section */
-        .our-story {
-            padding: 6rem 2rem;
-            background: var(--gray-dark);
-        }
-
-        .story-content {
+        .hours-table {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
             max-width: 800px;
             margin: 0 auto;
-            text-align: center;
         }
 
-        .story-content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: var(--amber);
+        .hours-item {
+            background: rgba(248, 248, 246, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(184, 150, 62, 0.3);
+            animation: fadeUp 0.8s ease-out;
         }
 
-        .story-content p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            line-height: 1.8;
-        }
-
-        /* Info Section */
-        .info {
-            padding: 6rem 2rem;
-            background: var(--bg-black);
-        }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .info-card {
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .info-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--amber);
-        }
-
-        .stars {
-            color: var(--amber);
-            font-size: 1.2rem;
+        .hours-day {
+            font-weight: 600;
             margin-bottom: 0.5rem;
+            color: var(--gold-accent);
+        }
+
+        .hours-time {
+            font-size: 1.1rem;
+            color: var(--soft-white);
+        }
+
+        /* Location Section */
+        .location {
+            background: var(--ivory-light);
+            padding: 6rem 0;
+        }
+
+        .location-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .location-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            animation: fadeUp 0.8s ease-out;
+        }
+
+        .location-title {
+            color: var(--emerald-primary);
+            margin-bottom: 1rem;
+        }
+
+        .location-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .location-info {
+            animation: fadeUp 0.8s ease-out;
+        }
+
+        .location-address {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .location-details {
+            margin-bottom: 2rem;
+        }
+
+        .location-details p {
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .location-map {
+            animation: fadeUp 0.8s ease-out;
+        }
+
+        .map-embed {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
 
         /* Footer */
-        footer {
-            background: var(--gray-dark);
-            padding: 3rem 2rem 2rem;
-            text-align: center;
-            border-top: 1px solid var(--gray-medium);
+        .footer {
+            background: var(--emerald-dark);
+            color: var(--text-light);
+            padding: 4rem 0 2rem 0;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
 
         .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 3rem;
             margin-bottom: 2rem;
         }
 
-        .footer-section h4 {
-            color: var(--amber);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
+        .footer-section h3 {
+            color: var(--gold-accent);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
         }
 
-        .footer-section p, .footer-section a {
-            color: var(--cream);
+        .footer-section p,
+        .footer-section a {
+            color: var(--text-muted);
             text-decoration: none;
-            opacity: 0.8;
             margin-bottom: 0.5rem;
             display: block;
         }
 
         .footer-section a:hover {
-            color: var(--amber);
-            opacity: 1;
+            color: var(--soft-white);
         }
 
         .footer-bottom {
-            border-top: 1px solid var(--gray-medium);
+            border-top: 1px solid rgba(248, 248, 246, 0.2);
             padding-top: 2rem;
-            margin-top: 2rem;
-            opacity: 0.6;
+            text-align: center;
+            color: var(--text-muted);
         }
 
-        /* Mobile Styles */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
+        .footer-bottom a {
+            color: var(--gold-accent);
+            text-decoration: none;
+        }
 
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .btn-primary, .btn-secondary {
-                width: 100%;
-                max-width: 300px;
-            }
+        .footer-bottom a:hover {
+            color: var(--gold-light);
         }
 
         /* Animations */
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideInLeft {
+        @keyframes fadeInLeft {
             from {
                 opacity: 0;
                 transform: translateX(-50px);
@@ -460,7 +651,7 @@
             }
         }
 
-        @keyframes slideInRight {
+        @keyframes fadeInRight {
             from {
                 opacity: 0;
                 transform: translateX(50px);
@@ -471,187 +662,438 @@
             }
         }
 
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .fade-in.visible {
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-up.visible {
             opacity: 1;
             transform: translateY(0);
         }
 
-        .slide-in-left {
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: all 0.6s ease;
+        /* Mobile Responsive */
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+
+            .hero-content {
+                padding: 4rem 2rem;
+                order: 2;
+            }
+
+            .hero-image {
+                height: 50vh;
+                order: 1;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .trust-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .location-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
         }
 
-        .slide-in-left.visible {
-            opacity: 1;
+        @media (max-width: 640px) {
+            .hero-content {
+                padding: 3rem 1.5rem;
+            }
+
+            .trust-container {
+                grid-template-columns: 1fr;
+            }
+
+            .categories-container,
+            .about-container,
+            .hours-container,
+            .location-container,
+            .footer-container {
+                padding: 0 1.5rem;
+            }
+
+            .nav-container {
+                padding: 0 1.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                padding: 0.8rem 1.5rem;
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        /* Mobile Menu Styles */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: var(--emerald-primary);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-menu.active {
             transform: translateX(0);
         }
 
-        .slide-in-right {
-            opacity: 0;
-            transform: translateX(50px);
-            transition: all 0.6s ease;
+        .mobile-menu a {
+            color: var(--soft-white);
+            font-size: 2rem;
+            text-decoration: none;
+            margin: 1rem 0;
+            font-family: 'Playfair Display', serif;
         }
 
-        .slide-in-right.visible {
-            opacity: 1;
-            transform: translateX(0);
+        .mobile-menu .close-btn {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            background: none;
+            border: none;
+            color: var(--soft-white);
+            font-size: 2rem;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <header id="header">
-        <nav>
-            <a href="#" class="logo playfair">Gold Coast Market</a>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Gold Coast Market</a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#delivery">Delivery</a></li>
                 <li><a href="#categories">Products</a></li>
-                <li><a href="#story">Our Story</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#hours">Hours</a></li>
+                <li><a href="#location">Location</a></li>
             </ul>
-            <a href="tel:3126647400" class="phone-btn">(312) 664-7400</a>
-        </nav>
-    </header>
-
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="playfair">Gold Coast Market</h1>
-            <p class="tagline playfair">River North's Premier Liquor & Convenience Store</p>
-            <p class="subtitle">Discover Chicago's finest selection of craft beer, premium wines, and top-shelf spirits in the heart of River North</p>
-            <div class="cta-buttons">
-                <a href="#delivery" class="btn-primary">Order Delivery</a>
-                <a href="#categories" class="btn-secondary">Shop Categories</a>
-            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
         </div>
-    </section>
+    </nav>
 
-    <section id="delivery" class="delivery">
-        <div class="fade-in">
-            <h2 class="playfair">We Deliver</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 3rem; opacity: 0.9;">Get your favorites delivered right to your door</p>
-            <div class="delivery-options" style="justify-content:center;">
-                <div class="delivery-card" style="max-width:500px;">
-                    <h3>Fast Delivery to Your Door</h3>
-                    <p>Order from our full selection and get it delivered straight to you in River North and surrounding neighborhoods.</p>
-                    <a href="https://www.doordash.com/en/store/gold-coast-market-chicago-29715359/" target="_blank" class="btn-primary" style="margin-top: 1.5rem; font-size: 1.1rem; padding: 16px 40px;">Order Delivery</a>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-btn" id="closeMenuBtn">✕</button>
+        <a href="#home">Home</a>
+        <a href="#categories">Products</a>
+        <a href="#about">About</a>
+        <a href="#hours">Hours</a>
+        <a href="#location">Location</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <p class="hero-tagline">River North's Premier Destination</p>
+                <h1 class="hero-title">Gold Coast Market</h1>
+                <p class="hero-description">Your trusted neighborhood liquor & convenience store featuring premium spirits, craft beer, fine wines, and everyday essentials. Open late, delivered fast.</p>
+                <div class="hero-buttons">
+                    <a href="https://www.doordash.com/en/store/gold-coast-market-chicago-29715359/" class="btn btn-primary" target="_blank">Order Delivery</a>
+                    <a href="#location" class="btn btn-outline">Visit Store</a>
                 </div>
             </div>
+            <div class="hero-image"></div>
         </div>
     </section>
 
-    <section id="categories" class="categories">
-        <div class="fade-in">
-            <h2 class="playfair">Premium Selection</h2>
-            <div class="category-grid">
-                <div class="category-card">
+    <!-- Trust Stats -->
+    <section class="trust-stats">
+        <div class="trust-container">
+            <div class="trust-item fade-up">
+                <div class="trust-number">4.6★</div>
+                <div class="trust-label">Google Rating<br>(114 Reviews)</div>
+            </div>
+            <div class="trust-item fade-up">
+                <div class="trust-number">Open Late</div>
+                <div class="trust-label">9AM - 12AM<br>Every Day</div>
+            </div>
+            <div class="trust-item fade-up">
+                <div class="trust-number">1000+</div>
+                <div class="trust-label">Products<br>In Stock</div>
+            </div>
+            <div class="trust-item fade-up">
+                <div class="trust-number">River North</div>
+                <div class="trust-label">Prime Chicago<br>Location</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories" id="categories">
+        <div class="categories-container">
+            <div class="section-header">
+                <h2 class="section-title">Premium Selection</h2>
+                <p class="section-subtitle">Discover our carefully curated collection of spirits, wines, craft beers, and more.</p>
+            </div>
+            
+            <div class="categories-scroll">
+                <div class="category-card fade-up">
+                    <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=400&auto=format&fit=crop')"></div>
                     <div class="category-content">
-                        <h3 class="playfair">Beer & Craft</h3>
-                        <p>From local Chicago breweries to international favorites, discover our curated selection of craft beers and classic brews.</p>
-                        <a href="#" class="learn-more">Explore Collection</a>
+                        <h3 class="category-title">Beer & Craft</h3>
+                        <p class="category-description">Premium craft beers, local favorites, and classic imports.</p>
+                        <ul class="category-features">
+                            <li>Local Chicago breweries</li>
+                            <li>Imported & domestic</li>
+                            <li>Seasonal selections</li>
+                            <li>Cold storage guaranteed</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="category-card">
+
+                <div class="category-card fade-up">
+                    <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=400&auto=format&fit=crop')"></div>
                     <div class="category-content">
-                        <h3 class="playfair">Fine Wine</h3>
-                        <p>Carefully selected wines from renowned regions worldwide. Perfect for any occasion or celebration.</p>
-                        <a href="#" class="learn-more">Browse Wines</a>
+                        <h3 class="category-title">Wine</h3>
+                        <p class="category-description">Curated wines from around the world, from everyday to exceptional.</p>
+                        <ul class="category-features">
+                            <li>Red, white & rosé</li>
+                            <li>Champagne & sparkling</li>
+                            <li>Value & premium selections</li>
+                            <li>Perfect temperature storage</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="category-card">
+
+                <div class="category-card fade-up">
+                    <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1569529465841-dfecdab7503b?w=400&auto=format&fit=crop')"></div>
                     <div class="category-content">
-                        <h3 class="playfair">Spirits & Whiskey</h3>
-                        <p>Premium spirits, aged whiskeys, and top-shelf liquors for the discerning connoisseur.</p>
-                        <a href="#" class="learn-more">View Spirits</a>
+                        <h3 class="category-title">Spirits & Whiskey</h3>
+                        <p class="category-description">Top-shelf spirits, rare whiskeys, and cocktail essentials.</p>
+                        <ul class="category-features">
+                            <li>Premium whiskeys & bourbon</li>
+                            <li>Vodka, gin & rum</li>
+                            <li>Rare & limited releases</li>
+                            <li>Cocktail ingredients</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="category-card">
+
+                <div class="category-card fade-up">
+                    <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=400&auto=format&fit=crop')"></div>
                     <div class="category-content">
-                        <h3 class="playfair">Mixers & More</h3>
-                        <p>Complete your bar setup with premium mixers, garnishes, and convenience essentials.</p>
-                        <a href="#" class="learn-more">Shop Essentials</a>
+                        <h3 class="category-title">Mixers & More</h3>
+                        <p class="category-description">Everything you need to craft the perfect drink and more.</p>
+                        <ul class="category-features">
+                            <li>Premium mixers & sodas</li>
+                            <li>Fresh juices & garnishes</li>
+                            <li>Bar tools & accessories</li>
+                            <li>Snacks & convenience items</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="story" class="our-story">
-        <div class="story-content fade-in">
-            <h2 class="playfair">Our Story</h2>
-            <p>Nestled in the heart of Chicago's vibrant River North neighborhood, Gold Coast Market has been serving the community with distinction and dedication. We believe that exceptional quality and personalized service are the cornerstones of a truly great local market.</p>
-            <p>Our carefully curated selection reflects our commitment to offering only the finest products. Whether you're seeking a rare vintage, a local craft brew, or everyday essentials, our knowledgeable team is here to help you discover exactly what you're looking for.</p>
-            <p>At Gold Coast Market, we're more than just a store – we're your neighborhood partner in creating memorable moments, one perfect selection at a time.</p>
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-content">
+                <h2 class="about-title">About Gold Coast Market</h2>
+                <p class="about-description">Located in the heart of River North, Gold Coast Market has been serving Chicago's discerning customers with premium spirits, wines, and convenience items. Our commitment to quality, selection, and service sets us apart.</p>
+                <ul class="about-features">
+                    <li>Expertly curated selection of premium spirits</li>
+                    <li>Temperature-controlled wine storage</li>
+                    <li>Knowledgeable staff and personal recommendations</li>
+                    <li>Convenient River North location</li>
+                    <li>Extended hours for your convenience</li>
+                    <li>Fast delivery via DoorDash</li>
+                </ul>
+                <a href="https://www.doordash.com/en/store/gold-coast-market-chicago-29715359/" class="btn btn-primary" target="_blank">Order Now</a>
+            </div>
+            <div class="about-image"></div>
         </div>
     </section>
 
-    <section id="contact" class="info">
-        <div class="info-grid">
-            <div class="info-card fade-in">
-                <h3 class="playfair">Location & Hours</h3>
-                <p><strong>71 W Chicago Ave</strong><br>Chicago, IL 60654<br>River North</p>
-                <p style="margin-top: 1rem;"><strong>Open Daily</strong><br>9:00 AM - 12:00 AM</p>
-            </div>
-            <div class="info-card fade-in">
-                <h3 class="playfair">Contact Us</h3>
-                <p><strong>Phone:</strong><br><a href="tel:3126647400">(312) 664-7400</a></p>
-                <p style="margin-top: 1rem;"><strong>Questions?</strong><br>Call us for product availability<br>and delivery information</p>
-            </div>
-            <div class="info-card fade-in">
-                <h3 class="playfair">Customer Reviews</h3>
-                <div class="stars">★★★★★</div>
-                <p><strong>4.6 out of 5 stars</strong><br>Based on 114 Google Reviews</p>
-                <p style="margin-top: 1rem; font-style: italic; opacity: 0.8;">"Great selection and excellent service in River North!"</p>
+    <!-- Hours Section -->
+    <section class="hours" id="hours">
+        <div class="hours-container">
+            <h2 class="hours-title">Store Hours</h2>
+            <div class="hours-table">
+                <div class="hours-item fade-up">
+                    <div class="hours-day">Monday</div>
+                    <div class="hours-time">9AM - 12AM</div>
+                </div>
+                <div class="hours-item fade-up">
+                    <div class="hours-day">Tuesday</div>
+                    <div class="hours-time">9AM - 12AM</div>
+                </div>
+                <div class="hours-item fade-up">
+                    <div class="hours-day">Wednesday</div>
+                    <div class="hours-time">9AM - 12AM</div>
+                </div>
+                <div class="hours-item fade-up">
+                    <div class="hours-day">Thursday</div>
+                    <div class="hours-time">9AM - 12AM</div>
+                </div>
+                <div class="hours-item fade-up">
+                    <div class="hours-day">Friday</div>
+                    <div class="hours-time">9AM - 12AM</div>
+                </div>
+                <div class="hours-item fade-up">
+                    <div class="hours-day">Saturday</div>
+                    <div class="hours-time">9AM - 12AM</div>
+                </div>
+                <div class="hours-item fade-up">
+                    <div class="hours-day">Sunday</div>
+                    <div class="hours-time">9AM - 12AM</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-grid">
+    <!-- Location Section -->
+    <section class="location" id="location">
+        <div class="location-container">
+            <div class="location-header">
+                <h2 class="location-title">Visit Our Store</h2>
+                <p class="section-subtitle">Conveniently located in River North, Chicago</p>
+            </div>
+            
+            <div class="location-content">
+                <div class="location-info">
+                    <div class="location-address">
+                        <strong>71 W Chicago Ave<br>
+                        Chicago, IL 60654</strong>
+                    </div>
+                    <div class="location-details">
+                        <p><strong>Phone:</strong> (312) 664-7400</p>
+                        <p><strong>Hours:</strong> 9AM-12AM Daily</p>
+                        <p><strong>Neighborhood:</strong> River North</p>
+                        <p><strong>Rating:</strong> 4.6★ (114 Google Reviews)</p>
+                    </div>
+                    <a href="https://maps.google.com/?q=71+W+Chicago+Ave+Chicago+IL+60654" class="btn btn-primary" target="_blank">Get Directions</a>
+                </div>
+                <div class="location-map">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=71+W+Chicago+Ave+Chicago+IL+60654&output=embed" 
+                        class="map-embed"
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
                 <div class="footer-section">
-                    <h4 class="playfair">Gold Coast Market</h4>
-                    <p>River North's Premier Liquor & Convenience Store</p>
-                    <p>71 W Chicago Ave, Chicago, IL 60654</p>
-                    <p>Open Daily: 9AM - 12AM</p>
+                    <h3>Gold Coast Market</h3>
+                    <p>River North's premier liquor and convenience store, serving Chicago with quality products and exceptional service since day one.</p>
+                    <p>Your trusted neighborhood destination for premium spirits, wines, craft beers, and everyday essentials.</p>
                 </div>
+                
                 <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <a href="#delivery">Delivery Options</a>
-                    <a href="#categories">Product Categories</a>
-                    <a href="tel:3126647400">Call to Order</a>
-                    <a href="#story">Our Story</a>
+                    <h3>Contact Info</h3>
+                    <p>71 W Chicago Ave<br>Chicago, IL 60654</p>
+                    <p>Phone: (312) 664-7400</p>
+                    <p>Neighborhood: River North</p>
+                    <a href="https://www.doordash.com/en/store/gold-coast-market-chicago-29715359/" target="_blank">Order Delivery via DoorDash</a>
                 </div>
+                
                 <div class="footer-section">
-                    <h4>Services</h4>
-                    <p>Phone Ordering Available</p>
-                    <p>Third-Party Delivery</p>
-                    <p>Local River North Delivery</p>
-                    <p>Special Event Catering</p>
+                    <h3>Store Hours</h3>
+                    <p>Monday - Sunday<br>9:00 AM - 12:00 AM</p>
+                    <p>Open every day of the week</p>
+                    <p>Extended hours for your convenience</p>
+                    <p>4.6★ Rating (114 Google Reviews)</p>
                 </div>
             </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2024 Gold Coast Market. All rights reserved.</p>
-                <p>Powered by <a href="#" style="color: var(--amber);">Corner Digital Group</a></p>
+                <p>&copy; 2024 Gold Coast Market. All rights reserved. | Built by <a href="https://cornerdigitalgroup.com" target="_blank">Corner Digital Group</a></p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Header scroll effect
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
             } else {
-                header.classList.remove('scrolled');
+                navbar.classList.remove('scrolled');
             }
+        });
+
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMenuBtn = document.getElementById('closeMenuBtn');
+
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.add('active');
+        });
+
+        closeMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.remove('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+            });
         });
 
         // Smooth scrolling for navigation links
@@ -660,23 +1102,22 @@
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    const headerHeight = header.offsetHeight;
-                    const targetPosition = target.offsetTop - headerHeight;
+                    const offsetTop = target.offsetTop - 80; // Account for fixed navbar
                     window.scrollTo({
-                        top: targetPosition,
+                        top: offsetTop,
                         behavior: 'smooth'
                     });
                 }
             });
         });
 
-        // Intersection Observer for scroll animations
+        // Intersection Observer for fade-up animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
 
-        const observer = new IntersectionObserver((entries) => {
+        const observer = new IntersectionObserver(function(entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
@@ -684,38 +1125,82 @@
             });
         }, observerOptions);
 
-        // Observe all elements with animation classes
-        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
+        // Observe all fade-up elements
+        document.querySelectorAll('.fade-up').forEach(el => {
             observer.observe(el);
         });
 
-        // Add stagger effect to category cards
+        // Category cards scroll animation with staggered delay
         const categoryCards = document.querySelectorAll('.category-card');
         categoryCards.forEach((card, index) => {
-            card.style.animationDelay = `${index * 0.1}s`;
-        });
-
-        // Add stagger effect to delivery cards
-        const deliveryCards = document.querySelectorAll('.delivery-card');
-        deliveryCards.forEach((card, index) => {
             card.style.animationDelay = `${index * 0.2}s`;
         });
 
-        // Add hover effects for enhanced interactivity
-        document.querySelectorAll('.category-card, .delivery-card, .info-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px) scale(1.02)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
+        // Trust stats animation with staggered delay
+        const trustItems = document.querySelectorAll('.trust-item');
+        trustItems.forEach((item, index) => {
+            item.style.animationDelay = `${index * 0.1}s`;
         });
 
-        // Enhanced button hover effects
-        document.querySelectorAll('.btn-primary, .btn-secondary, .phone-btn').forEach(btn => {
+        // Hours items animation with staggered delay
+        const hoursItems = document.querySelectorAll('.hours-item');
+        hoursItems.forEach((item, index) => {
+            item.style.animationDelay = `${index * 0.1}s`;
+        });
+
+        // Parallax effect for hero image (subtle)
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const heroImage = document.querySelector('.hero-image');
+            if (heroImage) {
+                const rate = scrolled * -0.5;
+                heroImage.style.transform = `translateY(${rate}px)`;
+            }
+        });
+
+        // Add loading animation for images
+        const images = document.querySelectorAll('.category-image, .about-image, .hero-image');
+        images.forEach(img => {
+            img.style.opacity = '0';
+            img.style.transition = 'opacity 0.5s ease';
+            
+            setTimeout(() => {
+                img.style.opacity = '1';
+            }, 100);
+        });
+
+        // Enhanced scroll reveal for better performance
+        let ticking = false;
+        
+        function updateScrollAnimations() {
+            const elements = document.querySelectorAll('.fade-up:not(.visible)');
+            const windowHeight = window.innerHeight;
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('visible');
+                }
+            });
+            
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                requestAnimationFrame(updateScrollAnimations);
+                ticking = true;
+            }
+        });
+
+        // Initial check for elements in viewport
+        updateScrollAnimations();
+
+        // Add hover effects for interactive elements
+        const buttons = document.querySelectorAll('.btn');
+        buttons.forEach(btn => {
             btn.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-3px)';
+                this.style.transform = 'translateY(-2px)';
             });
             
             btn.addEventListener('mouseleave', function() {
@@ -723,10 +1208,19 @@
             });
         });
 
-        // Page load animation
-        window.addEventListener('load', () => {
-            document.body.style.opacity = '1';
+        // Lazy loading for images
+        const lazyImages = document.querySelectorAll('.category-image, .about-image');
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.classList.add('loaded');
+                    imageObserver.unobserve(img);
+                }
+            });
         });
+
+        lazyImages.forEach(img => imageObserver.observe(img));
     </script>
 </body>
 </html>
